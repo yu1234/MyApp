@@ -43,5 +43,4 @@ ext {
             runner               : 'com.android.support.test:runner:1.0.2'
     ]
     isDebug = true
-    project.ext.set("IS_DEBUG", "true") //主APP
 }
