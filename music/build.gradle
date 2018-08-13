@@ -1,0 +1,51 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.jakewharton.butterknife'
+apply plugin: 'com.alibaba.arouter'
+android {
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    buildToolsVersion rootProject.ext.android.buildToolsVersion
+    resourcePrefix 'music_'
+    defaultConfig {
+        minSdkVersion rootProject.ext.android.defaultConfig.minSdkVersion
+        targetSdkVersion rootProject.ext.android.defaultConfig.targetSdkVersion
+        versionCode rootProject.ext.android.defaultConfig.versionCode
+        versionName rootProject.ext.android.defaultConfig.versionName
+        testInstrumentationRunner rootProject.ext.android.defaultConfig.testInstrumentationRunner
+        multiDexEnabled rootProject.ext.android.defaultConfig.multiDexEnabled
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [moduleName: project.getName()]
+            }
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled rootProject.ext.android.buildTypes.release.minifyEnabled
+            zipAlignEnabled rootProject.ext.android.buildTypes.release.zipAlignEnabled
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            buildConfigField "boolean", "IS_DEBUG", project.IS_DEBUG
+        }
+        debug {
+            minifyEnabled rootProject.ext.android.buildTypes.debug.minifyEnabled
+            zipAlignEnabled rootProject.ext.android.buildTypes.debug.zipAlignEnabled
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            buildConfigField "boolean", "IS_DEBUG", project.IS_DEBUG
+        }
+    }
+    compileOptions {
+        sourceCompatibility rootProject.ext.android.compileOptions.sourceCompatibility
+        targetCompatibility rootProject.ext.android.compileOptions.targetCompatibility
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(':library')
+    // ARouter
+    implementation 'com.alibaba:arouter-api:1.3.1'
+    annotationProcessor 'com.alibaba:arouter-compiler:1.1.4'
+    //butterknife
+    implementation 'com.jakewharton:butterknife:8.5.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
+}

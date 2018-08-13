@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="lib_colorWhite">#ffffff</color>
+    <color name="lib_primary">#49a9f2</color>
+    <color name="lib_primaryDark">#267bbc</color>
+    <color name="lib_colorLightRed">#e78888</color>
+    <color name="lib_colorRed">#fa6565</color>
+    <color name="lib_colorBlack">#000000</color>
+    <color name="lib_color555">#555555</color>
+    <color name="lib_colorF5">#f5f5f5</color>
+    <color name="lib_color999">#999999</color>
+    <color name="lib_line_bg">#CDCDCD</color>
+    <color name="lib_colorYellow">#FFC400</color>
+    <!--top bar color-->
+    <color name="lib_bar_default_primary">#f5f5f5</color>
+    <color name="lib_bar_text_primary">@color/lib_colorBlack</color>
+    <!--popup window-->
+    <color name="lib_popup_bg">#81000000</color>
+
+    <color name="lib_colorDivider">#FFE6E4E4</color>
+</resources>
